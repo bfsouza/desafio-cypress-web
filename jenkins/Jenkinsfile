@@ -2,6 +2,10 @@ node {
     def imageTag = "peterngtr/rest-demo:${env.BUILD_NUMBER}"
     def dockerHome = tool 'myDocker'
 
+    environment {     
+      PATH = "/usr/bin/env:$PATH"
+    }
+    
     stage("Initializing") {
         cleanWs();
         checkout scm;
