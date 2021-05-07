@@ -3,7 +3,7 @@ node {
     def dockerHome = tool 'myDocker'
 
     environment {     
-      PATH = "/usr/bin/env:$PATH"
+      PATH = "/usr/bin/env:/usr/bin:/usr/bin/bash:$PATH"              
     }
     
     stage("Initializing") {
