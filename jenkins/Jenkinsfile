@@ -7,8 +7,6 @@ node {
     }
     
     stage("Initializing") {
-        echo "PATH_ENV = $PATH"
-        sh "source /etc/profile"
         cleanWs();
         checkout scm;
         sh "git reset --hard"
