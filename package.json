@@ -1,0 +1,25 @@
+{
+    "name": "codeceptjstest",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "allure:report": "allure serve output",
+        "test": "codeceptjs run --steps && npm run allure:report",
+        "test:headless": "set HEADLESS=true && codeceptjs run --steps && npm run allure:report",
+        "test:pipeline": "codeceptjs run --steps"
+    },
+    "author": "Bruno Felipi de Souza",
+    "license": "ISC",
+    "dependencies": {
+        "@codeceptjs/configure": "^0.6.2",
+        "codeceptjs-cmdhelper": "^2.2.3"
+    },
+    "devDependencies": {
+        "@wdio/cli": "^6.3.6",
+        "@wdio/selenium-standalone-service": "^6.12.1",
+        "codeceptjs": "^3.0.4",
+        "playwright": "^1.8.0",
+        "webdriverio": "^6.12.1"
+    }
+}
