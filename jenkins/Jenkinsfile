@@ -3,21 +3,19 @@ node {
     def dockerHome = tool 'myDocker'
 
     stage("Initializing") {
-        echo 'Build Number: ${env.BUILD_NUMBER}'
-        echo "Build Number: ${env.BUILD_NUMBER}"
         cleanWs();
         checkout scm;
-        sh('git reset --hard')
+        sh "git reset --hard"
         env.PATH = "${dockerHome}/bin:${env.PATH}"
     }
 
     stage("Building Images") {
-        bat 'docker build -t ${imageTag} -f docker/Dockerfile .'
+        bat "docker build -t ${imageTag} -f docker/Dockerfile ."
     }
 
     stage("Running Tests") {
         try {
-            sh 'jenkins/run-tests.sh ${env.BUILD_NUMBER}'
+            sh "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
         }
         finally {
             bat "dir report"
