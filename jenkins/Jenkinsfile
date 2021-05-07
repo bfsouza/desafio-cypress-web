@@ -10,7 +10,7 @@ node {
     }
 
     stage("Building Images") {
-        bat "docker build -t ${imageTag} -f docker/Dockerfile ."
+        sh "docker build -t ${imageTag} -f docker/Dockerfile ."
     }
 
     stage("Running Tests") {
@@ -19,7 +19,7 @@ node {
         }
         finally {
             bat "dir report"
-            allure includeProperties: false, jdk: '', results: [[path: 'report']]
+            allure includeProperties: true, jdk: '', results: [[path: 'report']]
         }
     }
 }
