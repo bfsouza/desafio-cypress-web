@@ -1,5 +1,3 @@
-#!/bin/sh
-
 VERSION=${1:-latest}
 
 echo "Pulling image ${VERSION}"
