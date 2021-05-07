@@ -1,4 +1,4 @@
-#!/usr/bin/bashaa
+#!/usr/bin/bash
 
 VERSION=${1:-latest}
 
