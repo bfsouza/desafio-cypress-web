@@ -1,9 +1,9 @@
 FROM peternguyentr/node-java-chrome:latest
 
 # Fix certificate issues
-RUN apt-get update --no-install-recommends && \
-    apt-get install ca-certificates-java && \
-    apt-get clean;
+#RUN #apt-get update --no-install-recommends && \
+    #apt-get install ca-certificates-java && \
+    #apt-get clean;
     #apt-get clean && \
     #update-ca-certificates -f;
 
