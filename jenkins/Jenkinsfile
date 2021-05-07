@@ -18,7 +18,7 @@ node {
             bat "jenkins/run-tests.sh ${env.BUILD_NUMBER}"
         }
         finally {
-            bat "dir report/"
+            bat "dir report"
             allure includeProperties: false, jdk: '', results: [[path: 'report']]
         }
     }
