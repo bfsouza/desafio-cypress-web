@@ -1,4 +1,4 @@
-#!/usr/bin/env basha
+#!/usr/bin/env bash
 
 VERSION=${1:-latest}
 
