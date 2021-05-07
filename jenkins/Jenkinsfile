@@ -7,6 +7,7 @@ node {
     }
     
     stage("Initializing") {
+        echo "PATH_ENV = $PATH"
         cleanWs();
         checkout scm;
         sh "git reset --hard"
