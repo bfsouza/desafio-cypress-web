@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 npm run test:pipeline
 dir report
